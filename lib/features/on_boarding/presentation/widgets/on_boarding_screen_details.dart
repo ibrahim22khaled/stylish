@@ -9,7 +9,8 @@ class OnBoardingScreenDetails extends StatefulWidget {
   OnBoardingScreenDetails({super.key});
 
   @override
-  State<OnBoardingScreenDetails> createState() => _OnBoardingScreenDetailsState();
+  State<OnBoardingScreenDetails> createState() =>
+      _OnBoardingScreenDetailsState();
 }
 
 class _OnBoardingScreenDetailsState extends State<OnBoardingScreenDetails> {
@@ -87,50 +88,44 @@ class _OnBoardingScreenDetailsState extends State<OnBoardingScreenDetails> {
             child: Row(
               children: [
                 if (_currentPage < 2)
-                CustomText(
-                  text: "Next",
-                  fontWeight: FontWeight.w900,
-                  fontSize: 18,
-                  textColor: Constansts.kMainColor,
-                ),
+                  CustomText(
+                    text: "Next",
+                    fontWeight: FontWeight.w900,
+                    fontSize: 18,
+                    textColor: Constansts.kMainColor,
+                  ),
                 if (_currentPage == 2)
-                CustomText(
-                  text: "Get Started",
-                  fontWeight: FontWeight.w900,
-                  fontSize: 18,
-                  textColor: Constansts.kMainColor,
-                ),
+                  CustomText(
+                    text: "Get Started",
+                    fontWeight: FontWeight.w900,
+                    fontSize: 18,
+                    textColor: Constansts.kMainColor,
+                  ),
               ],
             ),
           ),
         ),
 
-
-        Positioned(
-          bottom: SizeConfig.defaultSize! * 3.5,
-          left: 15,
-          child:
-           TextButton(
-            onPressed: () {
-              if (_controller.hasClients) {
-                _controller.previousPage(
-                  duration: Duration(milliseconds: 500),
-                  curve: Curves.easeInOut,
-                );
-              }
-            },
-            
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (_currentPage > 0)
-                CustomText(
-                  text: "Prev",
-                  fontWeight: FontWeight.w900,
-                  fontSize: 18,
-                  textColor: Color(0xffC4C4C4),
-                ),
-              ],
+        Visibility(
+          visible: _currentPage == 0 ? false : true,
+          child: Positioned(
+            bottom: SizeConfig.defaultSize! * 3.5,
+            left: 15,
+            child: TextButton(
+              onPressed: () {
+                if (_controller.hasClients) {
+                  _controller.previousPage(
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.easeInOut,
+                  );
+                }
+              },
+              child: CustomText(
+                text: "Prev",
+                fontWeight: FontWeight.w900,
+                fontSize: 18,
+                textColor: Color(0xffC4C4C4),
+              ),
             ),
           ),
         ),
@@ -140,7 +135,7 @@ class _OnBoardingScreenDetailsState extends State<OnBoardingScreenDetails> {
           child: Row(
             children: [
               CustomText(
-                text:'${_currentPage + 1}',
+                text: '${_currentPage + 1}',
                 fontWeight: FontWeight.w900,
                 fontSize: 18,
                 textColor: Colors.black,
