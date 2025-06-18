@@ -1,5 +1,5 @@
   import 'package:flutter/material.dart';
 
-class Constansts {
+class Constants {
     static Color kMainColor=Color(0xffF83758);
   }

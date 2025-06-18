@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stylish/features/auth/presentation/login_screen.dart';
 import 'package:stylish/features/on_boarding/presentation/on_boarding_screen.dart';
 import 'package:stylish/features/splash/presentation/splash_screen.dart';
 
@@ -19,7 +20,8 @@ class Stylish extends StatelessWidget {
      
       debugShowCheckedModeBanner: false,
       routes: {
-        "onboardingscreen":(context)=>OnBoardingScreen()
+        "onboardingscreen":(context)=>OnBoardingScreen(),
+        "loginscreen":(context)=>LoginScreen()
       },
       home: SplashScreen(),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:stylish/core/utils/constansts.dart';
+import 'package:stylish/core/utils/constants.dart';
 import 'package:stylish/core/utils/size_config.dart';
 import 'package:stylish/core/widgets/custom_text.dart';
 import 'package:stylish/features/on_boarding/presentation/widgets/page_screen.dart';
@@ -83,6 +83,9 @@ class _OnBoardingScreenDetailsState extends State<OnBoardingScreenDetails> {
                     curve: Curves.easeInOut,
                   );
                 }
+                else{
+                   Navigator.of(context).pushReplacementNamed("loginscreen");
+                }
               }
             },
             child: Row(
@@ -92,15 +95,17 @@ class _OnBoardingScreenDetailsState extends State<OnBoardingScreenDetails> {
                     text: "Next",
                     fontWeight: FontWeight.w900,
                     fontSize: 18,
-                    textColor: Constansts.kMainColor,
+                    textColor: Constants.kMainColor,
                   ),
                 if (_currentPage == 2)
-                  CustomText(
-                    text: "Get Started",
-                    fontWeight: FontWeight.w900,
-                    fontSize: 18,
-                    textColor: Constansts.kMainColor,
-                  ),
+                  
+                     CustomText(
+                      text: "Get Started",
+                      fontWeight: FontWeight.w900,
+                      fontSize: 18,
+                      textColor: Constants.kMainColor,
+                    ),
+                  
               ],
             ),
           ),
