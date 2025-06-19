@@ -17,29 +17,16 @@ class SignupScreenDetails extends StatelessWidget {
       children: [
       Headline(firstLine: 'Create an', secondLine: 'Account',),
        const Gap(10),
-       Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: SizeConfig.screenWidth! / 15,
-            ),
-            child: CustomTextField(
-              hintText: "Username or Email",
-              prefixIcon: Icon(Icons.person),
-            ),
-          ),
+       CustomTextField(
+         hintText: "Username or Email",
+         prefixIcon: Icon(Icons.person),
+       ),
           const Gap(20),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: SizeConfig.screenWidth! / 15,
-            ),
-            child:PasswordTextField(hintText: "Password")
-          ),
+          PasswordTextField(hintText: "Password"),
           const Gap(20),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: SizeConfig.screenWidth! / 15,
-            ),
-            child:PasswordTextField(hintText: "Confirm Password")),
+          PasswordTextField(hintText: "Confirm Password"),
             const Gap(20),
+
           Padding(
             padding: EdgeInsets.only(left: SizeConfig.screenWidth! / 15),
             child: Row(
@@ -68,15 +55,10 @@ class SignupScreenDetails extends StatelessWidget {
             ),
           ),
           const Gap(50),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: SizeConfig.screenWidth! / 15,
-            ),
-            child: CustomGeneralButton(
-              buttonName: "Create Account",
-              fontWeight: FontWeight.w600,
-              fontSize: 20,
-            ),
+          CustomGeneralButton(
+            buttonName: "Create Account",
+            fontWeight: FontWeight.w600,
+            fontSize: 20,
           ),
           const Gap(50),
           SocialMediaContact(text1: "I Already Have An Account", text2: "Login", destinationScreen: 'loginscreen',)

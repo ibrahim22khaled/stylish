@@ -15,14 +15,9 @@ class ForgotpasswordScreenDetails extends StatelessWidget {
       children: [
         Headline(firstLine: 'Forgot', secondLine: 'password?'),
         const Gap(10),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: SizeConfig.screenWidth! / 15,
-          ),
-          child: CustomTextField(
-            hintText: "Enter your email address",
-            prefixIcon: Icon(Icons.mail),
-          ),
+        CustomTextField(
+          hintText: "Enter your email address",
+          prefixIcon: Icon(Icons.mail),
         ),
         const Gap(20),
         Padding(
@@ -55,15 +50,10 @@ class ForgotpasswordScreenDetails extends StatelessWidget {
           ),
         ),
         const Gap(50),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: SizeConfig.screenWidth! / 15,
-          ),
-          child: CustomGeneralButton(
-            buttonName: "Submit",
-            fontWeight: FontWeight.w600,
-            fontSize: 20,
-          ),
+        CustomGeneralButton(
+          buttonName: "Submit",
+          fontWeight: FontWeight.w600,
+          fontSize: 20,
         ),
       ],
     );

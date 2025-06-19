@@ -25,22 +25,12 @@ class _LoginScreenDetailsState extends State<LoginScreenDetails> {
         children: [
           Headline(firstLine: 'Welcome', secondLine: 'Back!',),
           const Gap(10),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: SizeConfig.screenWidth! / 15,
-            ),
-            child: CustomTextField(
-              hintText: "Username or Email",
-              prefixIcon: Icon(Icons.person),
-            ),
+          CustomTextField(
+            hintText: "Username or Email",
+            prefixIcon: Icon(Icons.person),
           ),
           const Gap(20),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: SizeConfig.screenWidth! / 15,
-            ),
-            child:PasswordTextField(hintText: "Password")
-          ),
+          PasswordTextField(hintText: "Password"),
           const Gap(10),
           Padding(
             padding: EdgeInsets.only(right: SizeConfig.screenWidth! / 15),
@@ -62,15 +52,10 @@ class _LoginScreenDetailsState extends State<LoginScreenDetails> {
             ),
           ),
           const Gap(50),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: SizeConfig.screenWidth! / 15,
-            ),
-            child: CustomGeneralButton(
-              buttonName: "Login",
-              fontWeight: FontWeight.w600,
-              fontSize: 20,
-            ),
+          CustomGeneralButton(
+            buttonName: "Login",
+            fontWeight: FontWeight.w600,
+            fontSize: 20,
           ),
           const Gap(50),
           SocialMediaContact(text1: "Create An Account", text2: "Sign Up", destinationScreen: 'signupscreen',)
