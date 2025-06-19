@@ -1,24 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:stylish/core/utils/constants.dart';
 
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({
-    super.key,
-    required this.hintText,
-    required this.prefixIcon,
-  });
+class PasswordTextField extends StatefulWidget {
+  const PasswordTextField({super.key, required this.hintText});
   final String hintText;
-  final Icon prefixIcon;
 
+  @override
+  State<PasswordTextField> createState() => _PasswordTextFieldState();
+}
+
+class _PasswordTextFieldState extends State<PasswordTextField> {
+  bool _obscureText =true;
   @override
   Widget build(BuildContext context) {
     return TextField(
+      obscureText: _obscureText,
       cursorColor: Constants.kMainColor,
       decoration: InputDecoration(
         filled: true,
         fillColor: Color(0xffF3F3F3),
-        prefixIcon: prefixIcon,
-        hintText: hintText,
+        prefixIcon: Icon(Icons.lock),
+        suffixIcon: IconButton(
+          icon: Icon(_obscureText ? Icons.visibility_off : Icons.visibility),
+          onPressed: () {
+            setState(() {
+              _obscureText = !_obscureText;
+            });
+          },),
+        hintText: widget.hintText,
         hintStyle: TextStyle(
           fontSize: 12,
           fontWeight: FontWeight.w900,
@@ -34,5 +43,6 @@ class CustomTextField extends StatelessWidget {
         ),
       ),
     );
+    
   }
 }
