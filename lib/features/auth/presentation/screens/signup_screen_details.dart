@@ -55,10 +55,15 @@ class SignupScreenDetails extends StatelessWidget {
             ),
           ),
           const Gap(50),
-          CustomGeneralButton(
-            buttonName: "Create Account",
-            fontWeight: FontWeight.w600,
-            fontSize: 20,
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushReplacementNamed('getstartedscreen');
+            },
+            child: CustomGeneralButton(
+              buttonName: "Create Account",
+              fontWeight: FontWeight.w600,
+              fontSize: 20,
+            ),
           ),
           const Gap(50),
           SocialMediaContact(text1: "I Already Have An Account", text2: "Login", destinationScreen: 'loginscreen',)
