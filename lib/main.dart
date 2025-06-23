@@ -3,7 +3,7 @@ import 'package:stylish/features/auth/presentation/forgotpassword_screen.dart';
 import 'package:stylish/features/auth/presentation/login_screen.dart';
 import 'package:stylish/features/auth/presentation/signup_screen.dart';
 import 'package:stylish/features/get_started/presentation/get_started_screen.dart';
-import 'package:stylish/features/on_boarding/presentation/on_boarding_screen.dart';
+import 'package:stylish/features/on_boarding/presentation/screens/on_boarding_screen.dart';
 import 'package:stylish/features/splash/presentation/splash_screen.dart';
 
 void main() {
@@ -18,6 +18,7 @@ class Stylish extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
         fontFamily: 'Montserrat'
       ),
      
