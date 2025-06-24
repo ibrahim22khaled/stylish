@@ -63,11 +63,16 @@ class _OnBoardingScreenDetailsState extends State<OnBoardingScreenDetails> {
         Positioned(
           top: SizeConfig.defaultSize! * 5,
           right: 15,
-          child: CustomText(
-            text: "Skip",
-            fontWeight: FontWeight.w900,
-            fontSize: 18,
-            textColor: Colors.black,
+          child: TextButton(
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, "loginscreen");
+            },
+            child: CustomText(
+              text: "Skip",
+              fontWeight: FontWeight.w900,
+              fontSize: 18,
+              textColor: Colors.black,
+            ),
           ),
         ),
         Positioned(

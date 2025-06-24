@@ -3,7 +3,8 @@ import 'package:stylish/features/auth/presentation/forgotpassword_screen.dart';
 import 'package:stylish/features/auth/presentation/login_screen.dart';
 import 'package:stylish/features/auth/presentation/signup_screen.dart';
 import 'package:stylish/features/get_started/presentation/get_started_screen.dart';
-import 'package:stylish/features/on_boarding/presentation/screens/on_boarding_screen.dart';
+import 'package:stylish/features/home_screen/presentation/home_screen.dart';
+import 'package:stylish/features/on_boarding/presentation/on_boarding_screen.dart';
 import 'package:stylish/features/splash/presentation/splash_screen.dart';
 
 void main() {
@@ -29,6 +30,7 @@ class Stylish extends StatelessWidget {
         "signupscreen":(context)=>SignupScreen(),
         "forgotpasswordscreen":(context)=>ForgotpasswordScreen(),
         "getstartedscreen":(context)=>GetStartedScreen(),
+        "homescreen":(context)=>HomeScreen(),
       },
       home: SplashScreen(),
     );

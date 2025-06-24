@@ -57,7 +57,7 @@ class SignupScreenDetails extends StatelessWidget {
           const Gap(50),
           GestureDetector(
             onTap: () {
-              Navigator.of(context).pushNamed('getstartedscreen');
+              Navigator.of(context).pushReplacementNamed('getstartedscreen');
             },
             child: CustomGeneralButton(
               buttonName: "Create Account",

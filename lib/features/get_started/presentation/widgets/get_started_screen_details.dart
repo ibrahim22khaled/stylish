@@ -92,10 +92,15 @@ class GetStartedScreenDetails extends StatelessWidget {
               const Gap(40),
               Padding(
                 padding:  EdgeInsets.symmetric(horizontal: SizeConfig.defaultSize! * 3),
-                child: CustomGeneralButton(
-                  buttonName: "Get Started",
-                  fontWeight: FontWeight.w600,
-                  fontSize: 23,
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacementNamed("homescreen");
+                  },
+                  child: CustomGeneralButton(
+                    buttonName: "Get Started",
+                    fontWeight: FontWeight.w600,
+                    fontSize: 23,
+                  ),
                 ),
               ),
             ],
