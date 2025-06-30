@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
         title: CustomAppBar(),
       ),
       body: HomeScreenDetails(), 
+      
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:stylish/features/home_screen/presentation/widgets/all_featured_widget.dart';
 import 'package:stylish/features/home_screen/presentation/widgets/category_card.dart';
 import 'package:stylish/features/home_screen/presentation/widgets/offers_container.dart';
+import 'package:stylish/features/home_screen/presentation/widgets/product_card_list_view.dart';
 import 'package:stylish/features/home_screen/presentation/widgets/promo_carousel_screen.dart';
 import 'package:stylish/features/home_screen/presentation/widgets/search_textfield.dart';
 
@@ -14,6 +15,7 @@ class HomeScreenDetails extends StatefulWidget {
 }
 
 class _HomeScreenDetailsState extends State<HomeScreenDetails> {
+  
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -30,6 +32,17 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
         SliverToBoxAdapter(
           child: OffersContainer(containerTitle: "Deal of the Day", containerColor: Color(0xff4392F9))
         ),
+        SliverToBoxAdapter(child: const Gap(10)),
+        SliverToBoxAdapter(child: ProductCardListView()
+        ),
+        SliverToBoxAdapter(child: const Gap(10)),
+        SliverToBoxAdapter(
+          child: OffersContainer(containerTitle: "Trending Products", containerColor: Color(0xffFD6E87))
+        ),
+        SliverToBoxAdapter(child: const Gap(10)),
+        SliverToBoxAdapter(child: ProductCardListView()
+        ),
+
       ],
     );
   }
