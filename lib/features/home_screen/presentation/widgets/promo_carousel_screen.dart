@@ -52,7 +52,7 @@ class _PromoCarouselScreenState extends State<PromoCarouselScreen> {
             return Builder(
               builder: (BuildContext context) {
                 return Container(
-                  width: 343.0, 
+                  width: 355, 
                   height: 220.0, 
                   margin: EdgeInsets.symmetric(vertical: 5.0),
                   child: ClipRRect(
@@ -63,8 +63,6 @@ class _PromoCarouselScreenState extends State<PromoCarouselScreen> {
                         Image.asset(
                           item['image']!,
                           fit: BoxFit.cover,
-                          width: 343.0,
-                          height: 220.0,
                         ),
                         Padding(
                           padding: EdgeInsets.all(15.0),
