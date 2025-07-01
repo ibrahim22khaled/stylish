@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:stylish/core/utils/constants.dart';
 import 'package:stylish/core/widgets/custom_app_bar.dart';
 import 'package:stylish/features/home_screen/presentation/screens/home_screen_details.dart';
 
@@ -18,9 +17,11 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Color(0xffF9F9F9),
       appBar:AppBar(
         backgroundColor: Color(0xffF9F9F9),
+        shadowColor: Color(0xffF9F9F9),
+        surfaceTintColor: Color(0xffF9F9F9),
         title: CustomAppBar(),
       ),
-      body: HomeScreen() , 
+      body: HomeScreenDetails() , 
       
     );
   }
