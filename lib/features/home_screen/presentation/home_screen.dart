@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:stylish/core/utils/constants.dart';
 import 'package:stylish/core/widgets/custom_app_bar.dart';
 import 'package:stylish/features/home_screen/presentation/screens/home_screen_details.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +20,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Color(0xffF9F9F9),
         title: CustomAppBar(),
       ),
-      body: HomeScreenDetails(), 
+      body: HomeScreen() , 
       
     );
   }

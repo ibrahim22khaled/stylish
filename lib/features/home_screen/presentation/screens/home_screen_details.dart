@@ -6,6 +6,7 @@ import 'package:stylish/features/home_screen/presentation/widgets/offers_contain
 import 'package:stylish/features/home_screen/presentation/widgets/product_card_list_view.dart';
 import 'package:stylish/features/home_screen/presentation/widgets/promo_carousel_screen.dart';
 import 'package:stylish/features/home_screen/presentation/widgets/search_textfield.dart';
+import 'package:stylish/features/home_screen/presentation/widgets/season_cover_offer.dart';
 
 class HomeScreenDetails extends StatefulWidget {
   const HomeScreenDetails({super.key});
@@ -42,6 +43,10 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
         SliverToBoxAdapter(child: const Gap(10)),
         SliverToBoxAdapter(child: ProductCardListView()
         ),
+        SliverToBoxAdapter(child: const Gap(10)),
+        SliverToBoxAdapter(child: SeasonCoverOffer()),
+        
+
 
       ],
     );
