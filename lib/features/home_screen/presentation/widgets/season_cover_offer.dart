@@ -12,7 +12,6 @@ class SeasonCoverOffer extends StatelessWidget {
           height: 270,
           width: 343,
           child: Column(
-            
             children: [
               ClipRRect(
                 borderRadius: const BorderRadius.vertical(top: Radius.circular(4)),

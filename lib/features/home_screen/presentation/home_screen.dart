@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:stylish/core/utils/constants.dart';
 import 'package:stylish/core/widgets/custom_app_bar.dart';
+import 'package:stylish/features/home_screen/presentation/screens/cart_screen.dart';
 import 'package:stylish/features/home_screen/presentation/screens/home_screen_details.dart';
 import 'package:stylish/features/home_screen/presentation/screens/search_screen.dart';
 import 'package:stylish/features/home_screen/presentation/screens/setting_screen.dart';
 import 'package:stylish/features/home_screen/presentation/screens/wish_list_screen.dart';
-import 'package:stylish/features/home_screen/presentation/widgets/floating_action_button_impl.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -21,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _screens = [
     HomeScreenDetails(),
     WishListScreen(),
+    CartScreen(),
     SearchScreen(),
     SettingScreen(),
   ];
@@ -41,9 +42,32 @@ class _HomeScreenState extends State<HomeScreen> {
         surfaceTintColor: Color(0xffF9F9F9),
         title: CustomAppBar(),
       ),
-      body: _screens[_selectedIndex], 
+      body: _screens[_selectedIndex],
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButtonImpl(), // created widget
+      floatingActionButton: Container(
+        height: 58,
+        width: 58,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 8,
+              offset: Offset(0, 4),
+            ),
+          ],
+        ),
+        child: FloatingActionButton(
+          onPressed: () => _onNavTapped(2), // Cart tab index
+          backgroundColor: _selectedIndex == 2 ? Constants.kMainColor: Colors.white,
+          elevation: 8,
+          child: Icon(
+            Icons.shopping_cart,
+            color: _selectedIndex == 2? Colors.white : Colors.black,
+            size: 30,
+          ),
+        ),
+      ),
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
         notchMargin: 8,
@@ -73,15 +97,15 @@ class _HomeScreenState extends State<HomeScreen> {
               _buildNavItem(
                 icon: Icons.search,
                 label: 'Search',
-                isActive: _selectedIndex == 2,
-                onTap: () => _onNavTapped(2),
+                isActive: _selectedIndex == 3,
+                onTap: () => _onNavTapped(3),
               ),
               // Setting
               _buildNavItem(
                 icon: Icons.settings,
                 label: 'Setting',
-                isActive: _selectedIndex == 3,
-                onTap: () => _onNavTapped(3),
+                isActive: _selectedIndex == 4,
+                onTap: () => _onNavTapped(4),
               ),
             ],
           ),
@@ -103,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, color: isActive ?Constants.kMainColor : Colors.black),
+            Icon(icon, color: isActive ? Constants.kMainColor : Colors.black),
             Text(
               label,
               style: TextStyle(
