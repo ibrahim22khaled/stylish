@@ -31,20 +31,23 @@ class SeasonCoverOffer extends StatelessWidget {
                         CustomText(text: "Summer’ 25 Collections", fontWeight: FontWeight.w100, fontSize: 16, textColor: Colors.black),
                       ],
                     ),
-                    Container(
-                      width: 90,
-                      height: 28,
-                      decoration: BoxDecoration(
-                        color:Constants.kMainColor,
-                        borderRadius: BorderRadius.circular(4)
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          CustomText(text: "View All", fontWeight: FontWeight.w700, fontSize: 12, textColor: Colors.white),
-                          Icon(Icons.arrow_forward,
-                          color: Colors.white,)
-                        ],
+                    GestureDetector(
+                      onTap: (){},
+                      child: Container(
+                        width: 90,
+                        height: 28,
+                        decoration: BoxDecoration(
+                          color:Constants.kMainColor,
+                          borderRadius: BorderRadius.circular(4)
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CustomText(text: "View All", fontWeight: FontWeight.w700, fontSize: 12, textColor: Colors.white),
+                            Icon(Icons.arrow_forward,
+                            color: Colors.white,)
+                          ],
+                        ),
                       ),
                     )
                   ],

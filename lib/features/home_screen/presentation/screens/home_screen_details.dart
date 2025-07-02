@@ -45,7 +45,7 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
         ),
         SliverToBoxAdapter(child: const Gap(10)),
         SliverToBoxAdapter(child: SeasonCoverOffer()),
-        
+        SliverToBoxAdapter(child: const Gap(30)),
 
 
       ],
