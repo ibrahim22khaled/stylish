@@ -1,15 +1,17 @@
 class ProductEntity {
-  final String name;
-  final String description;
-  final num price;
-  final num rate;
-  final int reviews;
+  final int productId;
+  final String productName;
+  final String productDescription;
+  final num productPrice;
+  final num productRate;
+  final int productReviews;
 
-  ProductEntity(
-     this.name,
-     this.description,
-     this.price,
-     this.rate,
-     this.reviews,
-  );
+  ProductEntity({
+    required this.productId,
+    required this.productName,
+    required this.productDescription,
+    required this.productPrice,
+    required this.productRate,
+    required this.productReviews,
+  });
 }
