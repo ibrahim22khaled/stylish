@@ -4,9 +4,10 @@ import 'package:stylish/core/utils/size_config.dart';
 import 'package:stylish/core/widgets/custom_text.dart';
 
 class OffersContainer extends StatelessWidget {
-  const OffersContainer({super.key, required this.containerTitle, required this.containerColor});
+  const OffersContainer({super.key, required this.containerTitle, required this.containerColor, required this.onTap});
   final String containerTitle;
   final Color containerColor;
+  final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -34,26 +35,29 @@ class OffersContainer extends StatelessWidget {
                       onTap: () {
                         
                       },
-                      child: Container(
-                        height: 28,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          borderRadius: BorderRadius.circular(4),
-                          border: Border.all(color: Colors.white),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CustomText(
-                              text: "View all",
-                              fontWeight: FontWeight.w700,
-                              fontSize: 12,
-                              textColor: Colors.white,
-                            ),
-                            const Gap(2),
-                            Icon(Icons.arrow_forward, color: Colors.white),
-                          ],
+                      child: GestureDetector(
+                        onTap: onTap,
+                        child: Container(
+                          height: 28,
+                          width: 100,
+                          decoration: BoxDecoration(
+                            color: Colors.transparent,
+                            borderRadius: BorderRadius.circular(4),
+                            border: Border.all(color: Colors.white),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CustomText(
+                                text: "View all",
+                                fontWeight: FontWeight.w700,
+                                fontSize: 12,
+                                textColor: Colors.white,
+                              ),
+                              const Gap(2),
+                              Icon(Icons.arrow_forward, color: Colors.white),
+                            ],
+                          ),
                         ),
                       ),
                     ),

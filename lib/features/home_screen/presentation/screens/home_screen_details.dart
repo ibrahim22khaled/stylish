@@ -31,14 +31,14 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
         SliverToBoxAdapter(child: PromoCarouselScreen()),
         SliverToBoxAdapter(child: const Gap(10)),
         SliverToBoxAdapter(
-          child: OffersContainer(containerTitle: "Deal of the Day", containerColor: Color(0xff4392F9))
+          child: OffersContainer(containerTitle: "Deal of the Day", containerColor: Color(0xff4392F9), onTap: () {  },)
         ),
         SliverToBoxAdapter(child: const Gap(10)),
         SliverToBoxAdapter(child: ProductCardListView()
         ),
         SliverToBoxAdapter(child: const Gap(10)),
         SliverToBoxAdapter(
-          child: OffersContainer(containerTitle: "Trending Products", containerColor: Color(0xffFD6E87))
+          child: OffersContainer(containerTitle: "Trending Products", containerColor: Color(0xffFD6E87), onTap: () { Navigator.of(context).pushNamed('trendingproductsscreen') ;},)
         ),
         SliverToBoxAdapter(child: const Gap(10)),
         SliverToBoxAdapter(child: ProductCardListView()
