@@ -11,7 +11,8 @@ ProductModel productModelFromJson(String str) =>
 
 String productModelToJson(ProductModel data) => json.encode(data.toJson());
 
-class ProductModel extends ProductEntity { // to get data parsed to entity attribues which will show in UI design.
+class ProductModel extends ProductEntity { 
+  // to get data parsed to entity attribues which will show in UI design.
   final int id;
   final String title;
   final double price;
