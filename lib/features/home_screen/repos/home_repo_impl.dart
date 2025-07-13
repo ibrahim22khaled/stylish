@@ -19,10 +19,13 @@ class HomeRepoImpl extends HomeRepo {
   Future<Either<Failure, List<ProductEntity>>> getProducts() async {
     try {
       List<ProductEntity>products;
+      // First you get the data cached in your device 
       products = homeLocalDataSource.getProducts();
+      /// A check condition to get the data if it's cached
       if (products.isNotEmpty) {
         return right(products);
       }
+      // Second you get the data if there is no cached data before
       products = await homeRemoteDataSource.getProducts();
       return right(products);
     } catch (e) {
