@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:stylish/core/utils/constants.dart';
 import 'package:stylish/features/auth/presentation/forgotpassword_screen.dart';
 import 'package:stylish/features/auth/presentation/login_screen.dart';
 import 'package:stylish/features/auth/presentation/signup_screen.dart';
 import 'package:stylish/features/get_started/presentation/get_started_screen.dart';
+import 'package:stylish/features/home_screen/domain/entities/product_entity.dart';
 import 'package:stylish/features/home_screen/presentation/home_screen.dart';
 import 'package:stylish/features/home_screen/presentation/screens/trending_products_screen.dart';
 import 'package:stylish/features/on_boarding/presentation/on_boarding_screen.dart';
 import 'package:stylish/features/splash/presentation/splash_screen.dart';
 
-void main() {
+void main() async{
   runApp(const Stylish());
+  Hive.registerAdapter(ProductEntityAdapter());
+ await Hive.openBox(KFeaturedBox);
 }
 
 class Stylish extends StatelessWidget {
