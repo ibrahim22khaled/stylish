@@ -1,4 +1,6 @@
 import 'package:stylish/core/utils/api_service.dart';
+import 'package:stylish/core/utils/constants.dart';
+import 'package:stylish/core/utils/functions/save_products_data.dart';
 import 'package:stylish/features/home_screen/data/models/product_model.dart';
 import 'package:stylish/features/home_screen/domain/entities/product_entity.dart';
 
@@ -13,10 +15,17 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource{
   Future<List<ProductEntity>> getProducts() async{
   var data =await apiService.get(endPoint: 'products'); // data is a list of maps... It depends on the API data shape.
 
-  List<ProductEntity> products = getProductsList(data); // here we separete it on an external function to achieve Single Responsibilty Principle
+  List<ProductEntity> products = getProductsList(data);
+   // here we separete it on an external function to achieve Single Responsibilty Principle
+
+   SaveProductsData(products, KFeaturedBox);
+   // here after i get data from remote data source i'll cached it in box
+
     return products;
 
   }
+
+  
 
   List<ProductEntity> getProductsList(List<Map<String, dynamic>> data) {
     List<ProductEntity>products=[];
