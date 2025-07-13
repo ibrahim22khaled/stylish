@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:stylish/core/utils/constants.dart';
 import 'package:stylish/features/auth/presentation/forgotpassword_screen.dart';
 import 'package:stylish/features/auth/presentation/login_screen.dart';
@@ -12,9 +13,11 @@ import 'package:stylish/features/on_boarding/presentation/on_boarding_screen.dar
 import 'package:stylish/features/splash/presentation/splash_screen.dart';
 
 void main() async{
-  runApp(const Stylish());
+  await Hive.initFlutter();
   Hive.registerAdapter(ProductEntityAdapter());
  await Hive.openBox(KFeaturedBox);
+  runApp(const Stylish());
+  
 }
 
 class Stylish extends StatelessWidget {
