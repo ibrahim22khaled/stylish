@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:stylish/core/errors/failure.dart';
 import 'package:stylish/features/home_screen/data/data_sources/home_local_data_source.dart';
 import 'package:stylish/features/home_screen/data/data_sources/home_remote_data_source.dart';
@@ -18,9 +19,10 @@ class HomeRepoImpl extends HomeRepo {
   @override
   Future<Either<Failure, List<ProductEntity>>> getProducts() async {
     try {
-      List<ProductEntity>products;
-      // First you get the data cached in your device 
+      List<ProductEntity> products;
+      // First you get the data cached in your device
       products = homeLocalDataSource.getProducts();
+
       /// A check condition to get the data if it's cached
       if (products.isNotEmpty) {
         return right(products);
@@ -29,7 +31,13 @@ class HomeRepoImpl extends HomeRepo {
       products = await homeRemoteDataSource.getProducts();
       return right(products);
     } catch (e) {
-      return left(ServerFailure());
+      if (e is DioException) {
+        // Because Dio handels server errors
+        return left(ServerFailure.fromDioException(e));
+      }
+        // That's an error I don't know and mostly I don't care about beacause I have handeld the API errors
+        return left(ServerFailure(e.toString()));
+      }
     }
   }
-}
+
