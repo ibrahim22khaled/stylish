@@ -7,8 +7,8 @@ class GetProductsUseCase {
   final HomeRepo homeRepo;
   GetProductsUseCase(this.homeRepo);
   
-  Future<Either<Failure,List<ProductEntity>>> getProducts(){
-    return homeRepo.getProducts();
+  Future<Either<Failure,List<ProductEntity>>> call()async{
+    return await homeRepo.getProducts();
     
   }
 }
