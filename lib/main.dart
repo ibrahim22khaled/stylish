@@ -15,7 +15,7 @@ import 'package:stylish/features/splash/presentation/splash_screen.dart';
 void main() async{
   await Hive.initFlutter();
   Hive.registerAdapter(ProductEntityAdapter());
- await Hive.openBox(KFeaturedBox);
+ await Hive.openBox(KHomeBox);
   runApp(const Stylish());
   
 }

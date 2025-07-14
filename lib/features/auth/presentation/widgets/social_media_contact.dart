@@ -55,11 +55,11 @@ class SocialMediaContact extends StatelessWidget {
                 text2,
                 style: TextStyle(
                   decoration: TextDecoration.underline,
-                  decorationColor: Constants.kMainColor,
+                  decorationColor:kMainColor,
                   decorationThickness: 1,
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
-                  color: Constants.kMainColor,
+                  color: kMainColor,
                 ),
               ),
             ),

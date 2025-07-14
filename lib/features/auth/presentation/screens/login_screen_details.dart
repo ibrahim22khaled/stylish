@@ -45,7 +45,7 @@ class _LoginScreenDetailsState extends State<LoginScreenDetails> {
                     text: "Forgot password?",
                     fontWeight: FontWeight.w900,
                     fontSize: 12,
-                    textColor: Constants.kMainColor,
+                    textColor: kMainColor,
                   ),
                 ),
               ],

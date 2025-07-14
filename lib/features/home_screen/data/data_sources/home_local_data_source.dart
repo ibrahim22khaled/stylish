@@ -8,7 +8,7 @@ abstract class HomeLocalDataSource {
 class HomeLocalDataSourceImpl extends HomeLocalDataSource{
   @override
   List<ProductEntity> getProducts() { 
-    var box = Hive.box<ProductEntity>(KFeaturedBox);
+    var box = Hive.box<ProductEntity>(KHomeBox);
     return box.values.toList();
     /// it gets data cached in my device memory from the SaveProductsData fun from remote data source by Hive
 }

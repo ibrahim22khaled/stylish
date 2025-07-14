@@ -37,7 +37,7 @@ class SeasonCoverOffer extends StatelessWidget {
                         width: 90,
                         height: 28,
                         decoration: BoxDecoration(
-                          color:Constants.kMainColor,
+                          color:kMainColor,
                           borderRadius: BorderRadius.circular(4)
                         ),
                         child: Row(

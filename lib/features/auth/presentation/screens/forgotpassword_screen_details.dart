@@ -36,7 +36,7 @@ class ForgotpasswordScreenDetails extends StatelessWidget {
                     TextSpan(
                       text: '*',
                       style: TextStyle(
-                        color: Constants.kMainColor,
+                        color: kMainColor,
                       ), // Specific word color
                     ),
                     TextSpan(

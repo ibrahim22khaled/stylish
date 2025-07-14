@@ -23,7 +23,7 @@ class CustomGeneralButton extends StatelessWidget {
       child: Container(
         height: 55,
         decoration: BoxDecoration(
-          color: Constants.kMainColor,
+          color: kMainColor,
           borderRadius: BorderRadius.circular(6),
         ),
         child: Center(

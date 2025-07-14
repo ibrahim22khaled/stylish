@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         child: FloatingActionButton(
           onPressed: () => _onNavTapped(2), // Cart tab index
-          backgroundColor: _selectedIndex == 2 ? Constants.kMainColor: Colors.white,
+          backgroundColor: _selectedIndex == 2 ? kMainColor: Colors.white,
           elevation: 8,
           child: Icon(
             Icons.shopping_cart,
@@ -127,11 +127,11 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, color: isActive ? Constants.kMainColor : Colors.black),
+            Icon(icon, color: isActive ? kMainColor : Colors.black),
             Text(
               label,
               style: TextStyle(
-                color: isActive ? Constants.kMainColor : Colors.black,
+                color: isActive ? kMainColor : Colors.black,
                 fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
               ),
             ),

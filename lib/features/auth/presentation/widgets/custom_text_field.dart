@@ -18,7 +18,7 @@ class CustomTextField extends StatelessWidget {
               horizontal: SizeConfig.screenWidth! / 15,
             ),
       child: TextField(
-        cursorColor: Constants.kMainColor,
+        cursorColor: kMainColor,
         decoration: InputDecoration(
           filled: true,
           fillColor: Color(0xffF3F3F3),
@@ -35,7 +35,7 @@ class CustomTextField extends StatelessWidget {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: Constants.kMainColor),
+            borderSide: BorderSide(color: kMainColor),
           ),
         ),
       ),

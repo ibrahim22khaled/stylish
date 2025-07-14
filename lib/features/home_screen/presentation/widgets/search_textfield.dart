@@ -10,7 +10,7 @@ class SearchTextfield extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: SizeConfig.defaultSize! * 2),
       child: TextField(
-        cursorColor: Constants.kMainColor,
+        cursorColor: kMainColor,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.all(12.0),
           filled: true,

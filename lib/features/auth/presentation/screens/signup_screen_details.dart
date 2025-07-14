@@ -44,7 +44,7 @@ class SignupScreenDetails extends StatelessWidget {
                     TextSpan(
                       text: ' Register ',
                       style: TextStyle(
-                        color: Constants.kMainColor,
+                        color:kMainColor,
                       ), // Specific word color
                     ),
                     TextSpan(text: 'button, you agree\nto the public offer.'),

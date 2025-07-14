@@ -18,7 +18,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource{
   List<ProductEntity> products = getProductsList(data);
    // here we separete it on an external function to achieve Single Responsibilty Principle
 
-   SaveProductsData(products, KFeaturedBox);
+   SaveProductsData(products, KHomeBox);
    // here after i get data from remote data source i'll cached it in box
 
     return products;

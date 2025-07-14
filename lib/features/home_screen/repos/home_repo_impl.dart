@@ -29,7 +29,7 @@ class HomeRepoImpl extends HomeRepo {
       products = await homeRemoteDataSource.getProducts();
       return right(products);
     } catch (e) {
-      return left(Failure());
+      return left(ServerFailure());
     }
   }
 }

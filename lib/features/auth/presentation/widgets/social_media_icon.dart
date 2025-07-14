@@ -9,7 +9,7 @@ class SocialMediaIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return CircleAvatar(
       radius: 29,
-      backgroundColor: Constants.kMainColor,
+      backgroundColor:kMainColor,
       child: CircleAvatar(
         radius: 28,
         backgroundColor: Color(0xffFCF3F6),

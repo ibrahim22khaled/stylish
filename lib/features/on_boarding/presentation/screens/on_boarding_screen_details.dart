@@ -100,7 +100,7 @@ class _OnBoardingScreenDetailsState extends State<OnBoardingScreenDetails> {
                     text: "Next",
                     fontWeight: FontWeight.w900,
                     fontSize: 18,
-                    textColor: Constants.kMainColor,
+                    textColor: kMainColor,
                   ),
                 if (_currentPage == 2)
                   
@@ -108,7 +108,7 @@ class _OnBoardingScreenDetailsState extends State<OnBoardingScreenDetails> {
                       text: "Get Started",
                       fontWeight: FontWeight.w900,
                       fontSize: 18,
-                      textColor: Constants.kMainColor,
+                      textColor:kMainColor,
                     ),
                   
               ],
