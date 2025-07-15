@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:stylish/features/home_screen/domain/entities/product_entity.dart';
 import 'package:stylish/features/home_screen/domain/use_cases/get_products_use_case.dart';
