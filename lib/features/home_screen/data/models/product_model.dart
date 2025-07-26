@@ -31,9 +31,11 @@ class ProductModel extends ProductEntity {
     required this.rating,
   }) : super(
          productId: id,
-         productName: title,
-         productDescription: description,
+         productTitle: title,
          productPrice: price,
+         productDescription: description,
+         productCategory: category,
+         productImage: image,
          productRate: rating.rate,
          productReviews: rating.count,
        );
