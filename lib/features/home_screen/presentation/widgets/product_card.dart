@@ -1,112 +1,96 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:stylish/core/utils/size_config.dart';
-import 'package:stylish/features/home_screen/presentation/models/product_model.dart';
+import 'package:stylish/features/home_screen/domain/entities/product_entity.dart';
 
 class ProductCard extends StatelessWidget {
-  final Product product;
+  const ProductCard({super.key, required this.productEntity});
+  final ProductEntity productEntity;
 
-  const ProductCard({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left:SizeConfig.defaultSize! *1.5),
-      child: Container(
-        width: 180,
-        height: 241,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(4),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(4)),
-              child: Image.asset(
-                product.image,
-                height: 124,
-                width: 170,
-                fit: BoxFit.cover, 
+    return Card(
+      elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Expanded(
+            flex: 3,
+            //Image section gets flex: 3 (60% of the card)
+            child: ClipRRect(
+              borderRadius: BorderRadiusGeometry.vertical(
+                top: Radius.circular(12),
+              ),
+              child: CachedNetworkImage(
+                imageUrl:
+                     productEntity.productImage,
+                    //  "https://media.gettyimages.com/id/2168461820/photo/liverpool-fc-v-brentford-fc-premier-league.jpg?s=612x612&w=gi&k=20&c=ko6NUlw_SHVjFtwdwNW2nUU2AQmxuoNPZlF7qMJCFQo=",
+                fit: BoxFit.cover,
+                height: 150,
+                width: double.infinity,
+                placeholder: (context, url) =>
+                    Center(child: CircularProgressIndicator()),
+                errorWidget: (context, url, error) => Icon(Icons.error),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+          ),
+          Expanded(
+            flex: 2,
+            // Content section gets flex: 2 (40% of the card)
+            child: Padding(
+              padding: EdgeInsets.all(8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    product.name,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
-                    maxLines: 2,
+                    productEntity.productTitle,// "Salah's kit",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
                   const Gap(4),
-                  Text(
-                    product.description,
-                    style: TextStyle(
-                      color: Colors.grey[600],
-                      fontSize: 12,
+                  Flexible(
+                    child: Text(
+                     productEntity.productDescription, // "It's the best and thr precious kit in the entire world",
+                      style: TextStyle(fontSize: 10),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
                   ),
-                  const Gap(8),
-                  Row(
+                  const Gap(4),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '₹${product.price.toStringAsFixed(0)}',
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
-                          color: Colors.black,
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                      Text(
-                        '₹${product.originalPrice.toStringAsFixed(0)}',
-                        style: const TextStyle(
-                          decoration: TextDecoration.lineThrough,
-                          color: Colors.grey,
+                        '${productEntity.productPrice}',// '₹500',
+                        style: TextStyle(
                           fontSize: 12,
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                      Text(
-                        '${product.discountPercentage}% Off',
-                        style: const TextStyle(
-                          color: Colors.red,
                           fontWeight: FontWeight.bold,
-                          fontSize: 12,
                         ),
                       ),
-                    ],
-                  ),
-                  const SizedBox(height: 8),
-                  // Ratings
-                  Row(
-                    children: [
-                      Icon(Icons.star, color: Colors.amber[400], size: 16),
-                      Text(
-                        '${product.rating}',
-                        style: const TextStyle(fontSize: 12),
-                      ),
-                      const SizedBox(width: 4),
-                      Text(
-                        '(${product.reviews})',
-                        style: TextStyle(color: Colors.grey[600], fontSize: 12),
+                      const Gap(4),
+                      Row(
+                        children: [
+                          for (int i = 0; i < 5; i++)
+                            Icon(
+                              i < productEntity.productRate? Icons.star : Icons.star_border,
+                              color: Colors.yellow[700],
+                              size: 14,
+                            ),
+                          const Gap(5.7),
+                          Text('${productEntity.productReviews}', style: TextStyle(fontSize: 10)),
+                        ],
                       ),
                     ],
                   ),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
