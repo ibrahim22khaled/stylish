@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:stylish/core/widgets/custom_app_bar.dart';
 import 'package:stylish/features/home_screen/presentation/manager/home_products_cubit/cubit/home_products_cubit.dart';
+import 'package:stylish/features/home_screen/presentation/screens/product_screen.dart';
 import 'package:stylish/features/home_screen/presentation/widgets/all_featured_widget.dart';
 import 'package:stylish/features/home_screen/presentation/widgets/product_card.dart';
 import 'package:stylish/features/home_screen/presentation/widgets/search_textfield.dart';
@@ -46,7 +47,12 @@ class TrendingProductsScreen extends StatelessWidget {
                     padding: EdgeInsets.all(10),
                     itemCount: state.products.length,
                     itemBuilder: (context, index) {
-                      return ProductCard(productEntity: state.products[index]);
+                      return InkWell(
+                        onTap:(){
+                          Navigator.push(context,
+                          MaterialPageRoute(builder:(context)=>ProductScreen(productEntity: state.products[index],)));
+                        },
+                        child: ProductCard(productEntity: state.products[index]));
                     },
                   ),
                 ],
