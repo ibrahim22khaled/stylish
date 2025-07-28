@@ -1,12 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:stylish/core/widgets/custom_text.dart';
 import 'package:stylish/features/home_screen/domain/entities/product_entity.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({super.key, required this.productEntity});
   final ProductEntity productEntity;
-
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +24,8 @@ class ProductCard extends StatelessWidget {
                 top: Radius.circular(12),
               ),
               child: CachedNetworkImage(
-                imageUrl:
-                     productEntity.productImage,
-                    //  "https://media.gettyimages.com/id/2168461820/photo/liverpool-fc-v-brentford-fc-premier-league.jpg?s=612x612&w=gi&k=20&c=ko6NUlw_SHVjFtwdwNW2nUU2AQmxuoNPZlF7qMJCFQo=",
+                imageUrl: productEntity.productImage,
+                //  "https://media.gettyimages.com/id/2168461820/photo/liverpool-fc-v-brentford-fc-premier-league.jpg?s=612x612&w=gi&k=20&c=ko6NUlw_SHVjFtwdwNW2nUU2AQmxuoNPZlF7qMJCFQo=",
                 fit: BoxFit.cover,
                 height: 150,
                 width: double.infinity,
@@ -46,7 +45,7 @@ class ProductCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    productEntity.productTitle,// "Salah's kit",
+                    productEntity.productTitle, // "Salah's kit",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -54,7 +53,8 @@ class ProductCard extends StatelessWidget {
                   const Gap(4),
                   Flexible(
                     child: Text(
-                     productEntity.productDescription, // "It's the best and thr precious kit in the entire world",
+                      productEntity
+                          .productDescription, // "It's the best and the precious kit in the entire world",
                       style: TextStyle(fontSize: 10),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -64,24 +64,29 @@ class ProductCard extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        '${productEntity.productPrice}',// '₹500',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      CustomText(
+                        text: '${productEntity.productPrice}', // '₹500',
+                        textColor: Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
                       ),
+
                       const Gap(4),
                       Row(
                         children: [
                           for (int i = 0; i < 5; i++)
                             Icon(
-                              i < productEntity.productRate? Icons.star : Icons.star_border,
+                              i < productEntity.productRate
+                                  ? Icons.star
+                                  : Icons.star_border,
                               color: Colors.yellow[700],
                               size: 14,
                             ),
                           const Gap(5.7),
-                          Text('${productEntity.productReviews}', style: TextStyle(fontSize: 10)),
+                          Text(
+                            '${productEntity.productReviews}',
+                            style: TextStyle(fontSize: 10),
+                          ),
                         ],
                       ),
                     ],
