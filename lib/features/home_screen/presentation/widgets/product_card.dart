@@ -65,7 +65,7 @@ class ProductCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomText(
-                        text: '${productEntity.productPrice}', // '₹500',
+                        text: '${productEntity.productPrice}EP', // '₹500',
                         textColor: Colors.black,
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
